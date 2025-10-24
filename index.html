@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kirinyaga University Login</title>
+    <style>
+        /* --- Global Styles --- */
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f8f9fa;
+            /* Light grey background for the page */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* --- Login Container --- */
+        .login-container {
+            background-color: #ffffff;
+            /* White box */
+            padding: 2.5rem;
+            /* Space inside the box */
+            border-radius: 8px;
+            /* Slightly rounded corners */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            /* Subtle shadow */
+            width: 100%;
+            max-width: 400px;
+            /* Max width of the login box */
+            box-sizing: border-box;
+            /* Ensures padding doesn't break layout */
+        }
+
+        /* --- Logo and Header --- */
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+            /* Space below the header */
+        }
+
+        .login-header img {
+            max-width: 120px;
+            /* Adjust logo size as needed */
+            height: auto;
+            margin-bottom: 0.5rem;
+        }
+
+        .login-header h1 {
+            font-size: 1.5rem;
+            /* "Kirinyaga University" */
+            color: #333;
+            margin: 0;
+            font-weight: 600;
+        }
+
+        /* --- Form Fields (Inputs) --- */
+        .login-form .form-group {
+            margin-bottom: 1rem;
+            /* Space between fields */
+        }
+
+        .login-form input[type="text"],
+        .login-form input[type="password"] {
+            width: 100%;
+            padding: 12px 15px;
+            /* Padding inside the text fields */
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            /* Light grey border */
+            border-radius: 5px;
+            /* Rounded corners for inputs */
+            box-sizing: border-box;
+            /* Crucial for 100% width */
+        }
+
+        /* --- Login Button --- */
+        .btn-login {
+            width: 100%;
+            padding: 12px;
+            font-size: 1rem;
+            font-weight: bold;
+            color: #fff;
+            /* White text */
+            background-color: #3cb371;
+            /* Green color from image */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            /* Smooth hover effect */
+            margin-top: 0.5rem;
+        }
+
+        .btn-login:hover {
+            background-color: #349d65;
+            /* Slightly darker green on hover */
+        }
+
+        /* --- Extra Links --- */
+        .login-links {
+            text-align: center;
+            margin-top: 1.5rem;
+        }
+
+        .login-links a {
+            display: block;
+            /* Makes links stack vertically */
+            color: #777;
+            /* Grey text */
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .login-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* --- Cookies Notice --- */
+        .cookies-notice {
+            text-align: right;
+            /* Aligns to the right */
+            margin-top: 1.5rem;
+        }
+
+        .cookies-notice a {
+            color: #777;
+            text-decoration: none;
+            font-size: 0.85rem;
+            display: inline-flex;
+            /* Aligns text and dot */
+            align-items: center;
+        }
+
+        /* Simulates the green dot */
+        .cookies-notice a::before {
+            content: '';
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            background-color: #3cb371;
+            /* Green dot */
+            border-radius: 50%;
+            margin-right: 6px;
+        }
+    </style>
+</head>
+<fieldset>
+
+    <body>
+
+        <div class="login-container">
+
+            <div class="login-header">
+                <img src="https://masomo2.kyu.ac.ke/pluginfile.php/1/theme_moove/logo/1759477431/kyu_logosmall2.png"
+                    alt="Kirinyaga University Logo">
+
+            </div>
+
+            <form class="login-form">
+                <div class="form-group">
+                    <input type="text" id="username" value="ct100/g/21350/24" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="password" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-login">Log in</button>
+            </form>
+
+            <div class="login-links">
+                <a href="#">Lost password?</a>
+                <a href="#">Access as a guest</a>
+            </div>
+
+            <div class="cookies-notice">
+                <a href="#">Cookies notice</a>
+            </div>
+
+        </div>
+
+    </body>
+</fieldset>
+
+</html>
