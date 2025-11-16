@@ -1,188 +1,184 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="us">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kirinyaga University Login</title>
-    <style>
-        /* --- Global Styles --- */
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            background-color: #f8f9fa;
-            /* Light grey background for the page */
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            margin: 0;
-        }
+    <title>Eric's Portfolio</title>
+    <link rel="stylesheet" href="myportfoliotrial1.css">
 
-        /* --- Login Container --- */
-        .login-container {
-            background-color: #ffffff;
-            /* White box */
-            padding: 2.5rem;
-            /* Space inside the box */
-            border-radius: 8px;
-            /* Slightly rounded corners */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-            /* Subtle shadow */
-            width: 100%;
-            max-width: 400px;
-            /* Max width of the login box */
-            box-sizing: border-box;
-            /* Ensures padding doesn't break layout */
-        }
-
-        /* --- Logo and Header --- */
-        .login-header {
-            text-align: center;
-            margin-bottom: 2rem;
-            /* Space below the header */
-        }
-
-        .login-header img {
-            max-width: 120px;
-            /* Adjust logo size as needed */
-            height: auto;
-            margin-bottom: 0.5rem;
-        }
-
-        .login-header h1 {
-            font-size: 1.5rem;
-            /* "Kirinyaga University" */
-            color: #333;
-            margin: 0;
-            font-weight: 600;
-        }
-
-        /* --- Form Fields (Inputs) --- */
-        .login-form .form-group {
-            margin-bottom: 1rem;
-            /* Space between fields */
-        }
-
-        .login-form input[type="text"],
-        .login-form input[type="password"] {
-            width: 100%;
-            padding: 12px 15px;
-            /* Padding inside the text fields */
-            font-size: 1rem;
-            border: 1px solid #ddd;
-            /* Light grey border */
-            border-radius: 5px;
-            /* Rounded corners for inputs */
-            box-sizing: border-box;
-            /* Crucial for 100% width */
-        }
-
-        /* --- Login Button --- */
-        .btn-login {
-            width: 100%;
-            padding: 12px;
-            font-size: 1rem;
-            font-weight: bold;
-            color: #fff;
-            /* White text */
-            background-color: #3cb371;
-            /* Green color from image */
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-            /* Smooth hover effect */
-            margin-top: 0.5rem;
-        }
-
-        .btn-login:hover {
-            background-color: #349d65;
-            /* Slightly darker green on hover */
-        }
-
-        /* --- Extra Links --- */
-        .login-links {
-            text-align: center;
-            margin-top: 1.5rem;
-        }
-
-        .login-links a {
-            display: block;
-            /* Makes links stack vertically */
-            color: #777;
-            /* Grey text */
-            text-decoration: none;
-            font-size: 0.9rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .login-links a:hover {
-            text-decoration: underline;
-        }
-
-        /* --- Cookies Notice --- */
-        .cookies-notice {
-            text-align: right;
-            /* Aligns to the right */
-            margin-top: 1.5rem;
-        }
-
-        .cookies-notice a {
-            color: #777;
-            text-decoration: none;
-            font-size: 0.85rem;
-            display: inline-flex;
-            /* Aligns text and dot */
-            align-items: center;
-        }
-
-        /* Simulates the green dot */
-        .cookies-notice a::before {
-            content: '';
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            background-color: #3cb371;
-            /* Green dot */
-            border-radius: 50%;
-            margin-right: 6px;
-        }
-    </style>
 </head>
-<fieldset>
 
-    <body>
 
-        <div class="login-container">
+<body>
 
-            <div class="login-header">
-                <img src="https://masomo2.kyu.ac.ke/pluginfile.php/1/theme_moove/logo/1759477431/kyu_logosmall2.png"
-                    alt="Kirinyaga University Logo">
+    <fieldset>
+        <legend><i>Eric's portifolio</i></legend>
+        <h2>Welcome to my portifolio</h2>
 
-            </div>
+        <u></u>
+        <h2 id="Home"></h2>
+        <nav>
+            <ul>
+                <li><a href="#Home"></a>Home</li>
+                <li><a href="#profile">Profile</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#approaches">Approaches</a></li>
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#Resources">Resources</a></li>
+            </ul>
+        </nav>
+        </h2>
+        <h2 id="profile"><u>My profile</u></h2>
+        <p>My name is Eric Maina</p><br>
+        <p>Iam an IT field tech services provider</p>
+        <img src="ric.jpg" alt="my pic" height="150px" width="150px">
+        <h2 id="education"><u>Education background</u></h2>
+        <p>Iam a Bsc IT degree holder from Kirinyaga university</p>
+        <p>I also hold certicates from various key courses:</p>
+        <ul>
+            <li>web Development</li>
+            <li>Database management</li>
+            <li>Networking</li>
+            <li>Cyber Security</li>
+        </ul>
 
-            <form class="login-form">
-                <div class="form-group">
-                    <input type="text" id="username" value="ct100/g/21350/24" required>
-                </div>
-                <div class="form-group">
-                    <input type="password" id="password" placeholder="Password" required>
-                </div>
-                <button type="submit" class="btn-login">Log in</button>
-            </form>
+        <h2 id="Contact"><u>contact</u></h2>
 
-            <div class="login-links">
-                <a href="#">Lost password?</a>
-                <a href="#">Access as a guest</a>
-            </div>
+        <table>
+            <tr>
+                <th>contact type</th>
+                <th>info</th>
+            </tr>
+            <tr>
+                <td>email</td>
+                <td>ericalmaina00@gmail.com</td>
+            </tr>
+            <tr>
+                <td>phone</td>
+                <td>+254796168453</td>
+            </tr>
+            <tr>
+                <td>whatsapp</td>
+                <td>+254796168453</td>
+            </tr>
+        </table>
 
-            <div class="cookies-notice">
-                <a href="#">Cookies notice</a>
-            </div>
+        <a href="https://wa.me/+254796168453">send a whatsapp message</a>
 
-        </div>
+        <h2 id="skills"><u>Skills</u></h2>
+        <ul>
+            <li>Technical Support</li>
 
-    </body>
-</fieldset>
+            <li>Hardware Troubleshooting - <ol>
+                    <li>computer hardware Installation</li>
+                    <li>hardware issue diagonosis</li>
+                    <li>Advising on computer hardware handling</li>
+                </ol>
+            </li>
+            <li>Software Installation - <ol>
+                    <li>Installation of operating systems- <ul>
+                            <li>Microsoft windows</li>
+                            <li>Linux</li>
+
+                        </ul>
+                    </li>
+                    <li>Application software Installation</li>
+                    <li>Diagonising issues on application softwares</li>
+                </ol>
+            </li>
+            <li>Web Development using html/css/js</li>
+            <li>Presentation softwares - <ol>
+                    <li>Powerpoint</li>
+                    <li>Google slides</li>
+                </ol>
+            </li>
+            <li>Statistical data manupulation using - <ol>
+                    <li>Microsoft office excel</li>
+                    <li>Google sheets</li>
+                    <li>Libre office Calc</li>
+                </ol>
+            </li>
+            <li>Expertise in word processing Software- <ol>
+                    <li>Microsoft word</li>
+                    <li>WPS office</li>
+                    <li>Libre office</li>
+                </ol>
+            </li>
+            <li>Networking- <ol>
+                    <li>Networking requirement gathering</li>
+                    <li>Network configurations</li>
+                    <li>Network Troubleshooting</li>
+                    <li>Network Security</li>
+                    <li>Network designing</li>
+                    <li>Network monitoring using essential softwares</li>
+                    <li>Installation of network securing softwares</li>
+                    <li>Network bases cyber protection</li>
+                </ol>
+            </li>
+            <li>Programming ie <ol>
+                    <li>c languange</li>
+                    <li>c++ languange</li>
+                    <li>python</li>
+                    <li>html</li>
+                    <li>cascading styling sheet in webs</li>
+                    <li>web java script</li>
+
+                </ol>
+            </li>
+            <li>Database management system using:
+                <ul>
+                    <li>mongo DB</li>
+                    <li>mysql commandline client</li>
+                    <li>postgre SQL</li>
+
+                </ul>
+            </li>
+
+
+        </ul>
+
+        <h3>Other field skills:</h3>
+
+        <ol>
+            <li>Team Collaboration</li>
+            <li>Problem Solving</li>
+            <li>Adaptability</li>
+            <li>Time Management</li>
+            <li>Educational based - <ul>
+                    <li>Teaching on new softwares</li>
+                    <li>creating awareness on existing software</li>
+                    <li>Educating on possible ways of avoiding cyber crimes</li>
+                    <li>Educating on proper and ethical use of computer technologies</li>
+                    <li>Creating awareness on use of artificial intelligence</li>
+                </ul>
+            </li>
+        </ol>
+        <h2 id="approaches"> <u>Approaches</u></h2>
+        <ol>
+            <li>Prototyping </li>
+            <li>Waterfall</li>
+            <li>Incremental</li>
+        </ol>
+
+        <h2 id="vision"><u>Vision</u></h2>
+        <p>Ensure skill diversity and growth</p>
+        <p>Foster a culture of continuous learning and adaptation to new technologies.</p>
+
+        <h2 id="Resources"><u>Resources</u></h2>
+        <ul>
+            <li>Use of git and github</li>
+            <li>Collaboration on projects with both internal and external Resources</li>
+
+        </ul>
+        <footer>
+            <p>&copy; 2025 Eric Maina. All rights reserved.</p>
+        </footer>
+    </fieldset>
+</body>
+
 
 </html>
