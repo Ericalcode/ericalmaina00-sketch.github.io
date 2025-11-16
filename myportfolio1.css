@@ -1,84 +1,171 @@
-/*
-  This new body rule centers your whole page on the screen
-  and makes its maximum width 960px.
-*/
+/* --- Global Styles & Body --- */
+* {
+  box-sizing: border-box; /* Makes layout sizing more predictable */
+}
+
 body {
-    background-color: lightgrey;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    
-    max-width: 960px;  /* <-- Corrected 'max-width' */
-    margin: 0 auto;      /* <-- Centers the body block on the page */
-    padding: 20px;       /* <-- Adds some space around the content */
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.6;
+  background-color: #f4f4f4; /* Light gray background */
+  color: #333;
+  margin: 0;
+  padding: 20px; /* Adds space on mobile if fieldset is 100% width */
 }
 
-/* This rule (which was invalidly nested) is now separate.
-*/
-.nice-style {
-    background-color: #f2f2f2;
-    padding: 20px;
-    border-radius: 10px;
+/* --- Main Page Container (Your Fieldset) --- */
+fieldset {
+  max-width: 960px;       /* Sets a max width for readability */
+  margin: 20px auto;      /* Centers the fieldset on the page */
+  padding: 30px 40px;     /* Comfortable padding inside the container */
+  background-color: #ffffff; /* White "paper" background */
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-li {
-    margin-bottom: 10px;
-    padding-left: 20px;
+legend {
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #005a9c; /* A professional blue */
+  padding: 0 10px; /* Gives the legend text breathing room */
 }
 
-p {
-    line-height: 1.6;
-}
-
-img {
-    border-radius: 5px;
-    width: 300px;
-    height: 350px;
-    background-color: grey;
-    display: block; /* Helps center the image if margins are added */
-    margin: 0 auto; /* Centers the image */
-}
-
+/* --- Navigation Bar --- */
 nav {
-    background-color: whitesmoke;
-    color: blue;
-    margin: 0; /* '0' is better than '0%' for margin */
-    padding: 0;
-    font-size: 1.5em;
+  background-color: #333; /* Dark background for nav */
+  border-radius: 5px;
+  margin-bottom: 30px;
 }
 
 nav ul {
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; /* Allows nav items to wrap on small screens */
 }
 
 nav ul li {
-    margin: 0px;
-    padding: 20px;
-    background-color: whitesmoke;
+  margin: 0;
+}
+
+nav ul li a {
+  display: block;
+  padding: 15px 20px;
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  transition: background-color 0.3s ease;
 }
 
 nav ul li a:hover {
-    background-color: #eb24eb;
+  background-color: #005a9c; /* Blue hover effect */
 }
 
-fieldset {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 12px;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 5px 10px 18px #888888;
-    box-sizing: border-box; /* Good practice! */
+/* --- Headings & Sections --- */
+h2 {
+  color: #005a9c;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 8px;
+  margin-top: 30px; /* Space above each new section */
+  margin-bottom: 20px;
+}
+
+h3 {
+  color: #444;
+  margin-top: 25px;
+  margin-bottom: 10px;
+}
+
+/* --- Content Elements --- */
+p {
+  margin-bottom: 15px;
+}
+
+img {
+  display: block;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%; /* Makes the profile picture circular */
+  object-fit: cover; /* Prevents the image from stretching */
+  margin: 20px auto; /* Centers the image */
+  border: 3px solid #eee;
+}
+
+ul,
+ol {
+  padding-left: 30px; /* Standard indentation */
+  margin-bottom: 15px;
+}
+
+li {
+  margin-bottom: 8px; /* Spacing between list items */
+}
+
+/* Nested list spacing */
+ul li ul,
+ul li ol,
+ol li ul,
+ol li ol {
+  margin-top: 8px;
+}
+
+/* --- Contact Table --- */
+table {
+  width: 100%;
+  border-collapse: collapse; /* Clean, modern table borders */
+  margin: 20px 0;
+}
+
+th,
+td {
+  border: 1px solid #ddd;
+  padding: 12px;
+  text-align: left;
+}
+
+th {
+  background-color: #f8f8f8; /* Light header for the table */
+  font-weight: bold;
+}
+
+tr:nth-child(even) {
+  background-color: #fdfdfd; /* Subtle striping for rows */
+}
+
+/* --- Links & Footer --- */
+a {
+  color: #005a9c;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Special styling for the WhatsApp "button" link */
+a[href*="wa.me"] {
+  display: inline-block;
+  background-color: #25D366; /* WhatsApp green */
+  color: white;
+  padding: 10px 15px;
+  border-radius: 5px;
+  font-weight: bold;
+  margin: 10px 0 20px;
+  text-decoration: none;
+}
+
+a[href*="wa.me"]:hover {
+  background-color: #1EAE56;
+  text-decoration: none;
 }
 
 footer {
-    text-align: center;
-    font-size: 0.9em;
-    color: pink; /* Note: This color may be hard to read on whitesmoke */
-    margin-top: 20px;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background-color: whitesmoke;
+  text-align: center;
+  font-size: 0.9em;
+  color: #777;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #eee; /* Separator line for the footer */
 }
