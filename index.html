@@ -1,184 +1,411 @@
-
 <!DOCTYPE html>
-<html lang="us">
-
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eric's Portfolio</title>
-    <link rel="stylesheet" href="myportfoliotrial1.css">
+    <title>Eric Maina | IT Specialist</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* --- 1. MODERN VARIABLES & RESET --- */
+        :root {
+            --primary: #0f172a;      /* Deep Navy (Background) */
+            --secondary: #1e293b;    /* Lighter Navy (Cards) */
+            --accent: #38bdf8;       /* Bright Sky Blue (Highlights) */
+            --text-main: #f1f5f9;    /* Off-white text */
+            --text-muted: #94a3b8;   /* Grey text */
+            --gradient: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            --card-shadow: 0 10px 30px -10px rgba(0,0,0,0.5);
+            --radius: 12px;
+        }
 
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--primary);
+            color: var(--text-main);
+            line-height: 1.7;
+        }
+
+        /* --- 2. NAVIGATION --- */
+        nav {
+            background: rgba(15, 23, 42, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding: 1rem 0;
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.5rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: -0.5px;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--text-main);
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        /* --- 3. HERO SECTION (Header) --- */
+        header {
+            text-align: center;
+            padding: 80px 20px;
+            background: radial-gradient(circle at center, #1e293b 0%, #0f172a 70%);
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            object-fit: cover;
+            border-radius: 50%;
+            border: 4px solid var(--accent);
+            box-shadow: 0 0 20px rgba(56, 189, 248, 0.3);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+
+        h1 {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: -webkit-linear-gradient(0deg, #fff, #94a3b8);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .subtitle {
+            color: var(--accent);
+            font-size: 1.1rem;
+            font-weight: 500;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* --- 4. SECTIONS & CARDS --- */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        section {
+            margin-bottom: 60px;
+            /* Scroll margin handles sticky nav offset */
+            scroll-margin-top: 100px; 
+        }
+
+        .section-title {
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.8rem;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid var(--accent);
+            display: inline-block;
+            color: var(--text-main);
+        }
+
+        /* Generic Card Style */
+        .card {
+            background-color: var(--secondary);
+            padding: 25px;
+            border-radius: var(--radius);
+            box-shadow: var(--card-shadow);
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        /* --- 5. SKILLS GRID --- */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-category h3 {
+            color: var(--accent);
+            margin-bottom: 15px;
+            font-size: 1.1rem;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 5px;
+        }
+
+        .skill-list {
+            list-style: none;
+        }
+
+        .skill-list li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 8px;
+            color: var(--text-muted);
+        }
+
+        .skill-list li::before {
+            content: "▹";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* --- 6. CONTACT TABLE REPLACEMENT --- */
+        /* Turning the table into a clean grid */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .contact-item {
+            background: rgba(255,255,255,0.03);
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            transition: background 0.3s;
+        }
+
+        .contact-item:hover {
+            background: rgba(255,255,255,0.08);
+        }
+
+        .contact-label {
+            display: block;
+            color: var(--accent);
+            font-weight: bold;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        /* WhatsApp Button - High visibility */
+        .wa-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: #25D366;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            font-size: 1rem;
+            margin-top: 30px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+        }
+
+        .wa-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.6);
+        }
+
+        /* --- 7. FOOTER --- */
+        footer {
+            text-align: center;
+            padding: 40px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            margin-top: 40px;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            .nav-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            .nav-links {
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 15px;
+            }
+
+            h1 { font-size: 1.8rem; }
+            
+            .skills-grid {
+                grid-template-columns: 1fr; /* Stack skills on mobile */
+            }
+        }
+    </style>
 </head>
-
 
 <body>
 
-    
-        <legend><i>Eric's portifolio</i></legend>
-        <h2>Welcome to my portifolio</h2>
-
-        <u></u>
-        <h2 id="Home"></h2>
-        <nav>
-            <ul>
-                <li><a href="#Home"></a>Home</li>
+    <nav>
+        <div class="nav-container">
+            <a href="#" class="logo">Eric Maina</a>
+            <ul class="nav-links">
                 <li><a href="#profile">Profile</a></li>
-                <li><a href="#education">Education</a></li>
-                <li><a href="#Contact">Contact</a></li>
                 <li><a href="#skills">Skills</a></li>
                 <li><a href="#approaches">Approaches</a></li>
                 <li><a href="#vision">Vision</a></li>
-                <li><a href="#Resources">Resources</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
-        </nav>
-        </h2>
-        <h2 id="profile"><u>My profile</u></h2>
-        <p>My name is Eric Maina</p><br>
-        <p>Iam an IT field tech services provider</p>
-        <img src="1761205720738.jpg" alt="my pic" height="150px" width="150px">
-        <h2 id="education"><u>Education background</u></h2>
-        <p>Iam a Bsc IT degree holder from Kirinyaga university</p>
-        <p>I also hold certicates from various key courses:</p>
-        <ul>
-            <li>web Development</li>
-            <li>Database management</li>
-            <li>Networking</li>
-            <li>Cyber Security</li>
-        </ul>
+        </div>
+    </nav>
 
-        <h2 id="Contact"><u>contact</u></h2>
+    <header id="profile">
+        <img src="1761205720738.jpg" alt="Eric Maina" class="profile-img">
+        <p class="subtitle">IT Field Tech Services Provider</p>
+        <h1>Welcome to My Portfolio</h1>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 10px auto;">
+            A dedicated IT professional with a BSc in IT from Kirinyaga University. 
+            Passionate about Networking, Cyber Security, and continuous technological growth.
+        </p>
+    </header>
 
-        <table>
-            <tr>
-                <th>contact type</th>
-                <th>info</th>
-            </tr>
-            <tr>
-                <td>email</td>
-                <td>ericalmaina00@gmail.com</td>
-            </tr>
-            <tr>
-                <td>phone</td>
-                <td>+254796168453</td>
-            </tr>
-            <tr>
-                <td>whatsapp</td>
-                <td>+254796168453</td>
-            </tr>
-        </table>
+    <div class="container">
 
-        <a href="https://wa.me/+254796168453">send a whatsapp message</a>
+        <section id="education">
+            <h2 class="section-title">Education Background</h2>
+            <div class="card">
+                <p><strong>BSc IT Degree Holder</strong> — Kirinyaga University</p>
+                <div style="margin-top: 15px;">
+                    <p style="color: var(--accent); margin-bottom: 5px;">Key Certifications:</p>
+                    <ul class="skill-list" style="display: grid; grid-template-columns: 1fr 1fr;">
+                        <li>Web Development</li>
+                        <li>Database Management</li>
+                        <li>Networking</li>
+                        <li>Cyber Security</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
 
-        <h2 id="skills"><u>Skills</u></h2>
-        <ul>
-            <li>Technical Support</li>
+        <section id="skills">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-grid">
+                
+                <div class="card skill-category">
+                    <h3>Hardware & Support</h3>
+                    <ul class="skill-list">
+                        <li>Hardware Installation & Troubleshooting</li>
+                        <li>Issue Diagnosis</li>
+                        <li>Hardware Handling Advisory</li>
+                        <li>Technical Support</li>
+                    </ul>
+                </div>
 
-            <li>Hardware Troubleshooting - <ol>
-                    <li>computer hardware Installation</li>
-                    <li>hardware issue diagonosis</li>
-                    <li>Advising on computer hardware handling</li>
-                </ol>
-            </li>
-            <li>Software Installation - <ol>
-                    <li>Installation of operating systems- <ul>
-                            <li>Microsoft windows</li>
-                            <li>Linux</li>
+                <div class="card skill-category">
+                    <h3>Software & OS</h3>
+                    <ul class="skill-list">
+                        <li>Windows & Linux Installation</li>
+                        <li>Application Troubleshooting</li>
+                        <li>MS Office (Word, Excel, PPT)</li>
+                        <li>Google Workspace (Docs, Sheets)</li>
+                    </ul>
+                </div>
 
-                        </ul>
-                    </li>
-                    <li>Application software Installation</li>
-                    <li>Diagonising issues on application softwares</li>
-                </ol>
-            </li>
-            <li>Web Development using html/css/js</li>
-            <li>Presentation softwares - <ol>
-                    <li>Powerpoint</li>
-                    <li>Google slides</li>
-                </ol>
-            </li>
-            <li>Statistical data manupulation using - <ol>
-                    <li>Microsoft office excel</li>
-                    <li>Google sheets</li>
-                    <li>Libre office Calc</li>
-                </ol>
-            </li>
-            <li>Expertise in word processing Software- <ol>
-                    <li>Microsoft word</li>
-                    <li>WPS office</li>
-                    <li>Libre office</li>
-                </ol>
-            </li>
-            <li>Networking- <ol>
-                    <li>Networking requirement gathering</li>
-                    <li>Network configurations</li>
-                    <li>Network Troubleshooting</li>
-                    <li>Network Security</li>
-                    <li>Network designing</li>
-                    <li>Network monitoring using essential softwares</li>
-                    <li>Installation of network securing softwares</li>
-                    <li>Network bases cyber protection</li>
-                </ol>
-            </li>
-            <li>Programming ie <ol>
-                    <li>c languange</li>
-                    <li>c++ languange</li>
-                    <li>python</li>
-                    <li>html</li>
-                    <li>cascading styling sheet in webs</li>
-                    <li>web java script</li>
+                <div class="card skill-category">
+                    <h3>Networking & Security</h3>
+                    <ul class="skill-list">
+                        <li>Network Design & Config</li>
+                        <li>Cyber Protection Basics</li>
+                        <li>Network Monitoring</li>
+                        <li>Network Security Softwares</li>
+                    </ul>
+                </div>
 
-                </ol>
-            </li>
-            <li>Database management system using:
-                <ul>
-                    <li>mongo DB</li>
-                    <li>mysql commandline client</li>
-                    <li>postgre SQL</li>
+                <div class="card skill-category">
+                    <h3>Development</h3>
+                    <ul class="skill-list">
+                        <li>HTML / CSS / JavaScript</li>
+                        <li>C / C++ / Python</li>
+                        <li>MongoDB / MySQL / PostgreSQL</li>
+                        <li>Git & GitHub</li>
+                    </ul>
+                </div>
 
+            </div>
+        </section>
+
+        <div class="skills-grid" style="margin-bottom: 60px;">
+            <section id="approaches" class="card">
+                <h2 class="section-title" style="font-size: 1.5rem; border: none;">Approaches</h2>
+                <ul class="skill-list">
+                    <li>Prototyping</li>
+                    <li>Waterfall Methodology</li>
+                    <li>Incremental Development</li>
                 </ul>
-            </li>
+            </section>
 
+            <section id="vision" class="card">
+                <h2 class="section-title" style="font-size: 1.5rem; border: none;">Vision</h2>
+                <p style="color: var(--text-muted);">
+                    To ensure skill diversity and foster a culture of continuous learning and adaptation to new technologies like AI.
+                </p>
+            </section>
+        </div>
 
-        </ul>
+        <section id="contact" style="text-align: center;">
+            <h2 class="section-title">Get In Touch</h2>
+            <div class="contact-grid">
+                <div class="contact-item">
+                    <span class="contact-label">Email</span>
+                    ericalmaina00@gmail.com
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">Phone</span>
+                    +254 796 168 453
+                </div>
+                <div class="contact-item">
+                    <span class="contact-label">WhatsApp</span>
+                    +254 796 168 453
+                </div>
+            </div>
+            
+            <a href="https://wa.me/+254796168453" class="wa-button">
+                Chat on WhatsApp
+            </a>
+        </section>
 
-        <h3>Other field skills:</h3>
+    </div>
 
-        <ol>
-            <li>Team Collaboration</li>
-            <li>Problem Solving</li>
-            <li>Adaptability</li>
-            <li>Time Management</li>
-            <li>Educational based - <ul>
-                    <li>Teaching on new softwares</li>
-                    <li>creating awareness on existing software</li>
-                    <li>Educating on possible ways of avoiding cyber crimes</li>
-                    <li>Educating on proper and ethical use of computer technologies</li>
-                    <li>Creating awareness on use of artificial intelligence</li>
-                </ul>
-            </li>
-        </ol>
-        <h2 id="approaches"> <u>Approaches</u></h2>
-        <ol>
-            <li>Prototyping </li>
-            <li>Waterfall</li>
-            <li>Incremental</li>
-        </ol>
+    <footer>
+        <p>&copy; 2025 Eric Maina. Built with modern web standards.</p>
+    </footer>
 
-        <h2 id="vision"><u>Vision</u></h2>
-        <p>Ensure skill diversity and growth</p>
-        <p>Foster a culture of continuous learning and adaptation to new technologies.</p>
-
-        <h2 id="Resources"><u>Resources</u></h2>
-        <ul>
-            <li>Use of git and github</li>
-            <li>Collaboration on projects with both internal and external Resources</li>
-
-        </ul>
-        <footer>
-            <p>&copy; 2025 Eric Maina. All rights reserved.</p>
-        </footer>
-    
 </body>
-
-
 </html>
