@@ -1,93 +1,192 @@
-body {
-    background-color: lightgrey;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+/* --- RESET & VARIABLES --- */
+:root {
+    --primary-color: #2c3e50; /* Dark Blue for text/headings */
+    --accent-color: #3498db;  /* Bright Blue for links/highlights */
+    --bg-color: #f4f4f9;      /* Light Grey background */
+    --white: #ffffff;
+    --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
 
-    justify-content: baseline;
-    display: flex;
-    align-items: center;
-    align-content: center;
+* {
+    box-sizing: border-box; /* Ensures padding doesn't break layout */
     margin: 0;
-    min-width: 960px;
-    font-size: 1.5em;
-    ;
-
+    padding: 0;
 }
 
-fieldset {
-    background-color: white;
-    border: 2px solid black;
-    border-radius: 12px;
-    width: 100%;
-    padding: 20px;
-    box-shadow: 5px 10px 18px #888888;
-    box-sizing: border-box;
-
-}
-
-li {
-    margin-bottom: 10px;
-    padding-left: 20px;
-}
-
-p {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--primary-color);
     line-height: 1.6;
+    padding-bottom: 50px; /* Space for footer */
 }
 
-img {
-    border-radius: 5px;
-    width: 300px;
-    height: 350px;
-    background-color: grey;
+/* --- CONTAINER --- */
+/* This centers your content on the screen */
+body > * {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
+/* --- NAVIGATION --- */
+/* Making the nav distinct and full-width */
 nav {
-
-    /* margin: 10px 0;
-    font-weight: bold;
-    /* font-size: 1.2em; */
-    background-color: whitesmoke;
-    color: blue;
-    margin: 0%;
-    padding: 0%;
-    font-size: 1.5em;
-
+    background-color: var(--primary-color);
+    padding: 15px 0;
+    position: sticky; /* Keeps nav at top when scrolling */
+    top: 0;
+    width: 100%;
+    max-width: 100%; /* Override body max-width for the bar */
+    z-index: 1000;
+    margin-bottom: 30px;
+    box-shadow: var(--shadow);
 }
 
 nav ul {
-    list-style-type: none;
+    list-style: none;
+    text-align: center;
     padding: 0;
-    margin: 0;
-    display: flex;
-    justify-content: center;
 }
 
 nav ul li {
-    margin: 0px;
-    padding: 20px;
-    background-color: whitesmoke;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--white);
+    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 5px 10px;
+    border-radius: 4px;
+    transition: background 0.3s;
 }
 
 nav ul li a:hover {
-    background-color: #eb24eb;
+    background-color: var(--accent-color);
 }
 
+/* --- HEADINGS & TYPOGRAPHY --- */
+h2 {
+    margin-top: 40px;
+    margin-bottom: 15px;
+    color: var(--primary-color);
+    text-transform: uppercase;
+    font-size: 1.5rem;
+    border-left: 5px solid var(--accent-color);
+    padding-left: 10px;
+}
+
+/* Modernize the <u> tag */
+u {
+    text-decoration: none; /* Remove old underline */
+    border-bottom: 2px solid var(--accent-color); /* Add modern underline */
+}
+
+/* Style the top legend */
+legend {
+    display: block;
+    background: var(--accent-color);
+    color: var(--white);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    width: fit-content;
+    margin: 20px auto 10px auto;
+}
+
+/* --- IMAGES --- */
+img {
+    display: block;
+    border-radius: 50%; /* Makes the image round */
+    border: 4px solid var(--accent-color);
+    margin: 20px 0;
+    box-shadow: var(--shadow);
+    object-fit: cover;
+}
+
+/* --- TABLES (Contact Section) --- */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    background: var(--white);
+    margin-bottom: 20px;
+    box-shadow: var(--shadow);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: var(--primary-color);
+    color: var(--white);
+    text-transform: uppercase;
+    font-size: 0.85rem;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* --- LISTS (Skills) --- */
+ul, ol {
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+/* Style nested lists (lists inside lists) */
+li > ol, li > ul {
+    margin-top: 5px;
+    margin-left: 20px;
+    color: #555;
+    border-left: 2px solid #ddd;
+    padding-left: 10px;
+}
+
+/* --- LINKS & BUTTONS --- */
+a {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Special button style for the WhatsApp link */
+a[href*="wa.me"] {
+    display: inline-block;
+    background-color: #25D366; /* WhatsApp Green */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50px;
+    font-weight: bold;
+    margin-top: 10px;
+    text-decoration: none;
+    box-shadow: var(--shadow);
+}
+
+a[href*="wa.me"]:hover {
+    background-color: #1ebc57;
+    transform: translateY(-2px);
+}
+
+/* --- FOOTER --- */
 footer {
     text-align: center;
-    font-size: 0.9em;
-    color: rgb(33, 31, 153);
-    margin-top: 20px;
-    padding: 10px;
-    border-top: 1px solid #ccc;
-    background-color: whitesmoke;
-
-}
-
-body {
-    .nice-style {
-        background-color: #f2f2f2;
-        padding: 20px;
-        border-radius: 10px;
-
-
-    }
+    margin-top: 50px;
+    padding: 20px;
+    background-color: var(--primary-color);
+    color: var(--white);
+    font-size: 0.9rem;
+    /* Force footer to break out of the centered layout */
+    width: 100%;
+    max-width: 100%;
 }
